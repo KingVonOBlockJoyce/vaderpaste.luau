@@ -4819,16 +4819,25 @@ local abs = math.abs
             flags[cfg.flag]["animation"] = "normal"
 
             rainbow.MouseButton1Down:Connect(function()
-                selected.BackgroundTransparency = 1; 
+                rainbow.BackgroundTransparency = 1
+                fade_alpha.BackgroundTransparency = 1
+                fade.BackgroundTransparency = 1
+                normal.BackgroundTransparency = 1
                 selected = "rainbow" 
+
                 rainbow.BackgroundTransparency = 0 
+
+
 
                 flags[cfg.flag]["animation"] = "rainbow"
                 cfg.saved_color = hsv(s,s,v)
             end)
 
             fade_alpha.MouseButton1Down:Connect(function()
-                selected.BackgroundTransparency = 1; 
+                rainbow.BackgroundTransparency = 1
+                fade_alpha.BackgroundTransparency = 1
+                fade.BackgroundTransparency = 1
+                normal.BackgroundTransparency = 1
                 selected = "fade_alpha" 
                 fade_alpha.BackgroundTransparency = 0 
 
@@ -4837,7 +4846,10 @@ local abs = math.abs
             end)
 
             fade.MouseButton1Down:Connect(function()
-                selected.BackgroundTransparency = 1; 
+                rainbow.BackgroundTransparency = 1
+                fade_alpha.BackgroundTransparency = 1
+                fade.BackgroundTransparency = 1
+                normal.BackgroundTransparency = 1
                 selected = "fade" 
                 fade.BackgroundTransparency = 0 
 
@@ -4846,7 +4858,10 @@ local abs = math.abs
             end)
 
             normal.MouseButton1Down:Connect(function()
-                selected.BackgroundTransparency = 1; 
+                rainbow.BackgroundTransparency = 1
+                fade_alpha.BackgroundTransparency = 1
+                fade.BackgroundTransparency = 1
+                normal.BackgroundTransparency = 1
                 selected = "normal" 
                 normal.BackgroundTransparency = 0 
 
