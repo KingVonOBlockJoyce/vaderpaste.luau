@@ -527,7 +527,7 @@ local abs = math.abs
                     Parent = tabs,
                     Name = "",
                     FontFace = library.font,
-                    TextColor3 = Color3.fromRGB(170, 170, 170),
+                    TextColor3 = Color3.fromRGB(255, 255, 255),
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     Text = "ledger.live",
                     TextStrokeTransparency = 0.5,
@@ -538,7 +538,8 @@ local abs = math.abs
                     BorderSizePixel = 0,
                     AutomaticSize = Enum.AutomaticSize.X,
                     TextSize = 12,
-                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+                    RichText = true,
                 })
 
                 local TEXT_ANIMATION_GRADIENT = library:create("UIGradient", {
