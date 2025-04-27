@@ -5262,7 +5262,7 @@ local abs = math.abs
             always.MouseButton1Click:Connect(function()
                 if cfg.mode == "always" then 
                     always.BackgroundTransparency = 1
-                end 
+                end
 
                 always.BackgroundTransparency = 1
                 press.BackgroundTransparency = 1
@@ -5275,6 +5275,18 @@ local abs = math.abs
                 cfg.set_visible(false)
                 cfg.open = false 
             end) 
+
+            if cfg.mode == "always" then 
+                always.BackgroundTransparency = 0
+            end
+
+            if cfg.mode == "toggle" then 
+                press.BackgroundTransparency = 0
+            end
+
+            if cfg.mode == "hold" then 
+                hold.BackgroundTransparency = 0
+            end
 
             keybind.MouseButton2Click:Connect(function()
                 cfg.open = not cfg.open 
