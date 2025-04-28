@@ -402,6 +402,12 @@ local abs = math.abs
                 end 
             end 
 
+            if getgenv().namelabel and getgenv().windowcfg then
+                local oldname = getgenv().windowcfg.name
+                local nametodo = string.match(oldname, "([^%.]+)")
+                getgenv().namelabel.Text = string.format(`%s.<font color='rgb(%s, %s, %s)'>%s</font>`, nametodo, math.floor(themes.preset["accent"].R*255), math.floor(themes.preset["accent"].G*255), math.floor(themes.preset["accent"].B*255), "lol")
+            end
+
             themes.preset[theme] = color 
         end 
 
@@ -439,6 +445,8 @@ local abs = math.abs
                 size = properties.Size or properties.size or dim2(0, 500, 0, 650),
                 watermarktext = properties.watermarktext or "bronx.lol | paid"
             }
+
+            getgenv().windowcfg = cfg
             
             local animated_text = library:animation(cfg.watermarktext) 
 
@@ -681,7 +689,7 @@ local abs = math.abs
 
                 library:apply_theme(accent_line, "accent", "BackgroundColor3") 
                 
-                local name = library:create("TextLabel", {
+                getgenv().namelabel = library:create("TextLabel", {
                     Parent = inline1,
                     Name = "",
                     FontFace = library.font,
@@ -3746,7 +3754,8 @@ local abs = math.abs
                 Name = "",
                 Position = UDim2.new(0, 2, 0, 2),
                 Size = UDim2.new(1, 0, 1, -4),
-                BackgroundColor3 = themes.preset.accent
+                BackgroundColor3 = themes.preset.accent,
+                BorderColor3 = Color3.fromRGB(20, 20, 20)
             })
 
             library:apply_theme(fill, "accent", "BackgroundColor3") 
