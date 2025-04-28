@@ -694,6 +694,7 @@ local abs = math.abs
                     Position = UDim2.new(0, 0, 0, -1),
                     Size = UDim2.new(1, 0, 0, 1),
                     ZIndex = 2,
+                    RichText = true,
                     TextSize = 12,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
