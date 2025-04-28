@@ -436,10 +436,11 @@ local abs = math.abs
         function library:window(properties) 
             local cfg = {
                 name = properties.Name or properties.name or properties.Title or properties.title or "ledger.live", 
-                size = properties.Size or properties.size or dim2(0, 500, 0, 650)
+                size = properties.Size or properties.size or dim2(0, 500, 0, 650),
+                watermarktext = properties.watermarktext or "bronx.lol | paid"
             }
             
-            local animated_text = library:animation( cfg.name .. " | developer | uid 1") 
+            local animated_text = library:animation(cfg.watermarktext) 
 
             -- watermark 
                 local __holder = library:create("Frame", {
